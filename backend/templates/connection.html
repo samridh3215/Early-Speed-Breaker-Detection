@@ -1,0 +1,31 @@
+{% load static %} 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connection status</title>
+</head>
+<body>
+    {% if exist %}
+    <h1 id="conn1">You have connected to our service and will recieve alerts on upcoming speedbreakers :)</h1>
+    <button id = "end-btn" onclick="handleClick()">End Connection</button>
+    {% else %}
+    <h1 id="conn2">You have connected to our service and will recieve alerts on upcoming speedbreakers :)</h1>
+    {% endif %}
+    <script src="{% static 'jquery-3.7.1.min.js.js' %}"></script>
+    <script>
+        function handleClick(){
+            $.ajax({
+                method:"POST",
+                url: "/endConnection/",
+            }).done((res)=>{
+                alert(res); 
+                $("#conn1").text = "Refresh to connect again"
+                $("#end-btn").hide()
+            }).fail((err)=>alert("Error"))
+        }
+    </script>
+</body>
+</html>
