@@ -5,6 +5,5 @@
 - Train an ML Model to classify speed breakers and non speed breakers
 - Create a webapp that runs in the background and collects sensor data and geolocation data and sends it to server
 - The server saves the information after validating it 
-- The user can use our service by opening a link and will be alerted if there is an upcoming speedbreaker (NOT IMPLEMENTED.....YET)
-
+- The user can use our service by opening a link and will be alerted if there is an upcoming speedbreaker
 
